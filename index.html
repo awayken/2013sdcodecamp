@@ -2,39 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>South Dakota Code Camp</title>
+    <title>South Dakota Kitty Camp</title>
 
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+    <link href="/styles/font-awesome.min.css" media="all" rel="stylesheet" />
     <link href="/styles/normalize.css" media="all" rel="stylesheet" />
     <link href="/styles/styles.css" media="all" rel="stylesheet" />
 </head>
 <body class="homepage">
     <header>
-        <div class="content">
-            <h1><a href="/">South Dakota Code Camp</a></h1>
-        
+        <div class="content clearfix">
             <nav>
                 <a href="/speakers">Speakers</a>
                 <a href="/sessions">Sessions</a>
                 <a href="/submit">Submit a Talk</a>
-                <a href="/register">Register</a>
+                <a href="http://sdcodecamp.eventbrite.com/">Register</a>
                 <a href="/sponsors">Sponsors</a>
             </nav>
+            
+            <h1><a href="/" class="logo"><i class="icon-code"></i> South Dakota Kitty Camp</a></h1>
         </div>
     </header>
     
     <div data-role="main" id="main">
+        <section class="hero">
+            <span>It's coming&hellip;</span>
+            <span>Nov 9th, 2013&hellip;</span>
+            <span>Cute Friggin&rsquo; Kitties!</span>
+        </section>
         
+        <section class="about"><div class="content">
+            <h2>What is Kitty Camp?</h2>
+            
+            <span class="date-location">November 9, 2013 &mdash; Sioux Falls, SD</span>
+            
+            <p>This is an event hosted by the Sioux Falls Developers Group and South Dakota .Net User Group with the sponsorship and support from many area businesses. Most of you visiting may be wonder &ldquo;What&rsquo;s a kitty camp?&rdquo; <a href="http://blogs.msdn.com/b/trobbins/archive/2004/12/12/280181.aspx" target="_blank">Here is the basic idea</a>.</p>
+        </div></section>
         
+        <section class="signup"><div class="content">
+            <form accept-charset="UTF-8" action="http://southdakotacodecamp.net/subscribers" class="horizontal" id="new_subscriber" method="post">
+                <p>Sign up for notifications and other cool stuff that you don&rsquo;t want to miss.</p>
+                
+                <fieldset>
+                    <label for="subscriber_name">Name</label>
+                    <input id="subscriber_name" name="subscriber[name]" type="text">
+                </fieldset>
+                <fieldset>
+                    <label for="subscriber_email">Email</label>
+                    <input id="subscriber_email" name="subscriber[email]" type="email">
+                </fieldset>
+                <fieldset>
+                    <button name="button" type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </div></section>
     </div>
     
     <footer>
-        <span class="logo">
-            <a href="/">South Dakota Code Camp</a>
-        </span>
-        <div class="follow">
-            <a href="https://plus.google.com/117784575670240245598" target="_blank">Google+</a>
-            <a href="https://twitter.com/sdcodecamp" target="_blank">Twitter</a>
+        <div class="content clearfix">
+            <div class="follow">
+                <a href="https://plus.google.com/117784575670240245598" target="_blank">Google+</a>
+                <a href="https://twitter.com/sdcodecamp" target="_blank">Twitter</a>
+            </div>
+            <span class="branding">
+                <a href="/" class="logo"><i class="icon-code"></i> South Dakota Kitty Camp</a>
+            </span>
         </div>
     </footer>
     

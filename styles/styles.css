@@ -12,6 +12,14 @@
     text-shadow: none;
 }
 
+body {
+    background: white;
+    color: #555555;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1em;
+    line-height: 1.2;
+}
+
 a:link, a:visited {
     color: #5875bb;
     text-decoration: none;
@@ -23,12 +31,40 @@ a:hover, a:active {
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
-    font-family: "Roboto Condensed", sans-serif;
     font-weight: bold;
     color: #555555;
     line-height: 1.35;
     text-rendering: optimizeLegibility;
     text-shadow: #888888 1px 1px;
+}
+
+.logo, .logo:link, .logo:visited {
+    color: #555555;
+    display: inline-block;
+    line-height: 2;
+    font-size: .875em;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+.logo:hover, .logo:active {
+    text-decoration: none;
+}
+.logo i {
+    color: #68dcc0;
+    font-size: 2em;
+    vertical-align: sub;
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
 }
 
 
@@ -37,30 +73,53 @@ h1, h2, h3, h4, h5, h6 {
 /******************************************************************************
     Layout
 ******************************************************************************/
+.content {
+    margin: 0 auto;
+    max-width: 920px;
+}
+
 header {
     background: white;
 }
-header .content {
-    margin: 0 auto;
-    max-width: 1920px;
+header h1 {
+    float: left;
+    font-size: 1.0em;
+    margin: 0.5em 0;
 }
-header h1 a:link, header h1 a:visited {
-    color: #555555;
-    position: relative;
-    display: inline-block;
-    margin: .5em 0;
-    padding-left: 50px;
-    line-height: 32px;
-    font-size: .875em;
-    font-weight: 300;
-    text-transform: uppercase;
-    text-shadow: none;
-    z-index: 3;
-    -webkit-transition: color 0.2s;
-    -moz-transition: color 0.2s;
-    -ms-transition: color 0.2s;
-    -o-transition: color 0.2s;
-    transition: color 0.2s;
+header nav {
+    float: right;
+    line-height: 2;
+    margin: 0.5em 0;
+}
+header nav a {
+    margin-left: 1em;
+}
+header nav a:first-child {
+    margin-left: 0;
+}
+
+#main section {
+    background: white;
+    padding: 1em 0;
+}
+
+footer {
+    background: white;
+}
+footer .branding {
+    float: left;
+    margin: 0.5em 0;
+}
+footer .follow {
+    float: right;
+    line-height: 2;
+    margin: 0.5em 0;
+}
+footer .follow a {
+    margin-left: 1em;
+}
+footer .follow a:first-child {
+    margin-left: 0;
 }
 
 
@@ -69,7 +128,30 @@ header h1 a:link, header h1 a:visited {
 /******************************************************************************
     Homepage
 ******************************************************************************/
-.homepage {}
+.homepage {
+    background: url('images/homepage.jpg') no-repeat fixed center top;
+}
+.homepage #main .hero {
+    background: transparent;
+    color: white;
+    font-size: 4em;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1em 0;
+    text-align: center;
+    text-shadow: 2px 2px 0.5em black;
+}
+.homepage #main .hero span {
+    display: block;
+}
+.homepage #main .hero span + span {
+    font-size: 1.25em;
+}
+.homepage #main .hero span + span + span {
+    font-size: 1.5em;
+}
 
 
 
