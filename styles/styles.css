@@ -14,6 +14,7 @@
 
 body {
     background: white;
+    background-size: cover;
     color: #555555;
     font-family: "Roboto Condensed", sans-serif;
     font-size: 1em;
@@ -38,6 +39,22 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: #888888 1px 1px;
 }
 
+p, ol, ul, dl, address {
+    line-height: 1.44;
+    padding-bottom: 1em;
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
 .logo, .logo:link, .logo:visited {
     color: #555555;
     display: inline-block;
@@ -56,15 +73,66 @@ h1, h2, h3, h4, h5, h6 {
     vertical-align: sub;
 }
 
-.clearfix:before, .clearfix:after {
-    content: " ";
-    display: table;
+.cutout {
+    text-shadow: 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    background: -webkit-linear-gradient(left, #68dcc0 30%, #8c93de 57%, #f9a57f 79%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    line-height: 1em;
 }
-.clearfix:after {
-    clear: both;
+
+
+
+
+/******************************************************************************
+    Forms
+******************************************************************************/
+label {
+    display: block;
+    font-size: .875em;
+    text-align: left;
 }
-.clearfix {
-    *zoom: 1;
+fieldset {
+    margin-bottom: 1em;
+}
+.horizontal fieldset {
+    display: inline-block;
+    max-width: 500px;
+    vertical-align: top;
+}
+.horizontal fieldset > button {
+    margin-top: 1em;
+}
+input[type="text"], input[type="date"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="url"], input[type="email"], input[type="number"], input[type="search"], input[type="file"], select, textarea, .textbox {
+    background: #eeeeee;
+    border: none;
+    color: #888888;
+    display: block;
+    font-size: .875em;
+    padding: 1em;
+    width: 100%;
+}
+button, .button, input[type="button"], input[type="submit"], input[type="reset"] {
+    background-color: #7c93ca;
+    border: 1px solid #5875bb;
+    color: white;
+    cursor: pointer;
+    font-size: .875em;
+    padding: 1em;
+}
+@media only screen and ( max-width: 550px ) {
+    .horizontal fieldset {
+        display: block;
+        max-width: none;
+        width: 100%;
+    }
+    .horizontal fieldset > button {
+        margin-top: 0;
+    }
 }
 
 
@@ -76,15 +144,18 @@ h1, h2, h3, h4, h5, h6 {
 .content {
     margin: 0 auto;
     max-width: 920px;
+    padding: 0 1em;
 }
 
 header {
     background: white;
+    position: relative;
 }
 header h1 {
-    float: left;
+    position: absolute;
     font-size: 1.0em;
-    margin: 0.5em 0;
+    left: 0;
+    top: 0.5em;
 }
 header nav {
     float: right;
@@ -96,6 +167,17 @@ header nav a {
 }
 header nav a:first-child {
     margin-left: 0;
+}
+@media only screen and ( max-width: 650px ) {
+    header {
+        text-align: center;
+    }
+    header h1 {
+        position: static;
+    }
+    header nav {
+        float: none;
+    }
 }
 
 #main section {
@@ -121,6 +203,17 @@ footer .follow a {
 footer .follow a:first-child {
     margin-left: 0;
 }
+@media only screen and ( max-width: 450px ) {
+    footer {
+        text-align: center;
+    }
+    footer .branding {
+        display: none;
+    }
+    footer .follow {
+        float: none;
+    }
+}
 
 
 
@@ -130,6 +223,11 @@ footer .follow a:first-child {
 ******************************************************************************/
 .homepage {
     background: url('images/homepage.jpg') no-repeat fixed center top;
+}
+@media only screen and ( max-width: 650px ) {
+    .homepage {
+        background-position: center -6em;
+    }
 }
 .homepage #main .hero {
     background: transparent;
@@ -143,6 +241,21 @@ footer .follow a:first-child {
     text-align: center;
     text-shadow: 2px 2px 0.5em black;
 }
+@media only screen and ( max-width: 850px ) {
+    .homepage #main .hero {
+        font-size: 3em;
+    }
+}
+@media only screen and ( max-width: 650px ) {
+    .homepage #main .hero {
+        font-size: 2em;
+    }
+}
+@media only screen and ( max-width: 450px ) {
+    .homepage #main .hero {
+        font-size: 1em;
+    }
+}
 .homepage #main .hero span {
     display: block;
 }
@@ -151,6 +264,44 @@ footer .follow a:first-child {
 }
 .homepage #main .hero span + span + span {
     font-size: 1.5em;
+}
+
+.homepage .about h2 {
+    font-size: 4em;
+    padding: .25em 0 .125em 0;
+}
+.homepage .about .date-location {
+    display: block;
+    letter-spacing: .2em;
+    margin-bottom: 2em;
+}
+.homepage .about p {
+    font-size: 1.25em;
+}
+
+.homepage .signup form {
+    padding: 0 1em 1em 1em;
+    text-align: center;
+}
+.homepage .signup form fieldset {
+    width: 40%;
+}
+.homepage .signup form fieldset > button {
+    font-size: 1.1em;
+    padding: .5em;
+    width: 100%;
+}
+.homepage .signup form fieldset:last-child {
+    width: 15%;
+}
+@media only screen and ( max-width: 550px ) {
+    .homepage .signup form fieldset {
+        width: 100%;
+    }
+    .homepage .signup form fieldset:last-child {
+        margin: 0 auto;
+        width: 50%;
+    }
 }
 
 
