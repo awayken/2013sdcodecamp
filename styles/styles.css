@@ -1,0 +1,79 @@
+/******************************************************************************
+    General Styles
+******************************************************************************/
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+::selection {
+    background: gray;
+    color: white;
+    text-shadow: none;
+}
+
+a:link, a:visited {
+    color: #5875bb;
+    text-decoration: none;
+}
+a:hover, a:active {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    color: #555555;
+    line-height: 1.35;
+    text-rendering: optimizeLegibility;
+    text-shadow: #888888 1px 1px;
+}
+
+
+
+
+/******************************************************************************
+    Layout
+******************************************************************************/
+header {
+    background: white;
+}
+header .content {
+    margin: 0 auto;
+    max-width: 1920px;
+}
+header h1 a:link, header h1 a:visited {
+    color: #555555;
+    position: relative;
+    display: inline-block;
+    margin: .5em 0;
+    padding-left: 50px;
+    line-height: 32px;
+    font-size: .875em;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-shadow: none;
+    z-index: 3;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -ms-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+
+
+
+/******************************************************************************
+    Homepage
+******************************************************************************/
+.homepage {}
+
+
+
+
+/******************************************************************************
+    Sessions
+******************************************************************************/
