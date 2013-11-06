@@ -145,6 +145,7 @@ button, .button, input[type="button"], input[type="submit"], input[type="reset"]
     margin: 0 auto;
     max-width: 920px;
     padding: 0 1em;
+    position: relative;
 }
 
 header {
