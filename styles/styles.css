@@ -20,6 +20,11 @@ body {
     font-size: 1em;
     line-height: 1.2;
 }
+@media only screen and ( max-width: 650px ) {
+    body {
+        background: #fff;
+    }
+}
 
 a:link, a:visited {
     color: #5875bb;
@@ -176,7 +181,7 @@ header nav a.active {
     header {
         text-align: center;
     }
-    header h1 {
+    header h1, header h2 {
         position: static;
     }
     header nav {
@@ -190,6 +195,11 @@ header nav a.active {
 #main section {
     background: white;
     padding: 1em 0;
+}
+@media only screen and ( max-width: 650px ) {
+    #main {
+        margin-top: 0;
+    }
 }
 
 footer {
@@ -291,6 +301,11 @@ footer .follow a:first-child {
 .homepage .about p {
     font-size: 1.25em;
 }
+@media only screen and ( max-width: 650px ) {
+    .homepage .about h2 {
+        font-size: 2em;
+    }
+}
 
 .homepage .signup form {
     padding: 0 1em 1em 1em;
@@ -332,14 +347,25 @@ footer .follow a:first-child {
     color: #68dcc0;
     font-weight: normal;
 }
+@media only screen and ( max-width: 650px ) {
+    #main h1 {
+        font-size: 2em;
+    }
+}
 
 .sessions article {
     display: inline-block;
     margin-right: 4%;
-    text-align: left;
     vertical-align: top;
     width: 45%;
 }
 .sessions article h3 {
     text-shadow: none;
+}
+@media only screen and ( max-width: 650px ) {
+    .sessions article {
+        display: block;
+        margin-right: 0;
+        width: 100%;
+    }
 }
