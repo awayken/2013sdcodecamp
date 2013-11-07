@@ -1,1 +1,71 @@
-has a form.
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit a Talk | South Dakota Kitty Camp</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+    <link href="/styles/font-awesome.min.css" media="all" rel="stylesheet" />
+    <link href="/styles/normalize.css" media="all" rel="stylesheet" />
+    <link href="/styles/styles.css" media="all" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="content clearfix">
+            <h2><a href="/" class="logo"><i class="icon-code"></i> South Dakota Kitty Camp</a></h2>
+            
+            <nav>
+                <a href="/sessions">Sessions</a>
+                <a href="/submit" class="active">Submit a Talk</a>
+                <a href="http://sdcodecamp.eventbrite.com/">Register</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div data-role="main" id="main">
+        <h1 class="cutout">Submit a Talk</h1>
+        
+        <div class="content speaker_submission">
+            <form accept-charset="UTF-8" action="" id="speaker_submission" method="post">
+                <fieldset>
+                    <label for="speaker_submission_name">Name*</label>
+                    <input id="speaker_submission_name" name="speaker_submission[name]" type="text">
+                </fieldset>
+                <fieldset>
+                    <label for="speaker_submission_email">Email*</label>
+                    <input id="speaker_submission_email" name="speaker_submission[email]" type="email">
+                </fieldset>
+                <fieldset>
+                    <label for="speaker_submission_title">Title*</label>
+                    <input id="speaker_submission_title" name="speaker_submission[title]" type="text">
+                </fieldset>
+                <fieldset>
+                    <label for="speaker_submission_abstract">Abstract*</label>
+                    <textarea id="speaker_submission_abstract" name="speaker_submission[abstract]" rows="20"></textarea>
+                </fieldset>
+                <fieldset>
+                    <label for="speaker_submission_speaker_bio">Speaker Bio</label>
+                    <textarea id="speaker_submission_speaker_bio" name="speaker_submission[speaker_bio]" rows="3"></textarea>
+                </fieldset>
+                <fieldset>
+                    <button name="button" type="submit">Submit Your Talk</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="content clearfix">
+            <div class="follow">
+                <a href="https://plus.google.com/117784575670240245598" target="_blank">Google+</a>
+                <a href="https://twitter.com/sdcodecamp" target="_blank">Twitter</a>
+            </div>
+            <span class="branding">
+                <a href="/" class="logo"><i class="icon-code"></i> South Dakota Kitty Camp</a>
+            </span>
+        </div>
+    </footer>
+    
+    <script src="/scripts/scripts.js"></script>
+</body>
+</html>
