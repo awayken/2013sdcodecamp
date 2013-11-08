@@ -1,0 +1,88 @@
+/******************************************************************************
+    Layout
+******************************************************************************/
+.content {
+    margin: 0 auto;
+    max-width: 920px;
+    padding: 0 1em;
+    position: relative;
+}
+
+header {
+    background: white;
+    position: relative;
+}
+header h1, header h2 {
+    position: absolute;
+    font-size: 1.0em;
+    left: 0;
+    top: 0.5em;
+}
+header nav {
+    float: right;
+    line-height: 2;
+    margin: 0.5em 0;
+}
+header nav a {
+    margin-left: 1em;
+}
+header nav a:first-child {
+    margin-left: 0;
+}
+header nav a.active {
+    border-bottom: 2px solid #00e4b1;
+}
+@media only screen and ( max-width: 650px ) {
+    header {
+        text-align: center;
+    }
+    header h1, header h2 {
+        position: static;
+    }
+    header nav {
+        float: none;
+    }
+}
+
+#main {
+    margin-top: 4em;
+}
+#main section {
+    background: white;
+    padding: 1em 0;
+}
+@media only screen and ( max-width: 650px ) {
+    #main {
+        margin-top: 0;
+    }
+}
+
+footer {
+    background: white;
+}
+footer .branding {
+    float: left;
+    margin: 0.5em 0;
+}
+footer .follow {
+    float: right;
+    line-height: 2;
+    margin: 0.5em 0;
+}
+footer .follow a {
+    margin-left: 1em;
+}
+footer .follow a:first-child {
+    margin-left: 0;
+}
+@media only screen and ( max-width: 450px ) {
+    footer {
+        text-align: center;
+    }
+    footer .branding {
+        display: none;
+    }
+    footer .follow {
+        float: none;
+    }
+}

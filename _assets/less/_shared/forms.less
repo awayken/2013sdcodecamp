@@ -1,0 +1,52 @@
+/******************************************************************************
+    Forms
+******************************************************************************/
+label {
+    display: block;
+    font-size: .875em;
+    text-align: left;
+}
+label.error {
+    color: #f00;
+}
+fieldset {
+    margin-bottom: 1em;
+}
+.horizontal fieldset {
+    display: inline-block;
+    max-width: 500px;
+    vertical-align: top;
+}
+.horizontal fieldset > button {
+    margin-top: 1em;
+}
+input[type="text"], input[type="date"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="url"], input[type="email"], input[type="number"], input[type="search"], input[type="file"], select, textarea, .textbox {
+    background: #eeeeee;
+    border: none;
+    color: #888888;
+    display: block;
+    font-size: .875em;
+    padding: 1em;
+    width: 100%;
+}
+input[type="text"].error, input[type="date"].error, input[type="time"].error, input[type="datetime"].error, input[type="datetime-local"].error, input[type="url"].error, input[type="email"].error, input[type="number"].error, input[type="search"].error, input[type="file"].error, select.error, textarea.error, .textbox.error {
+    border: 1px solid #f00;
+}
+button, .button, input[type="button"], input[type="submit"], input[type="reset"] {
+    background-color: #7c93ca;
+    border: 1px solid #5875bb;
+    color: white;
+    cursor: pointer;
+    font-size: .875em;
+    padding: 1em;
+}
+@media only screen and ( max-width: 550px ) {
+    .horizontal fieldset {
+        display: block;
+        max-width: none;
+        width: 100%;
+    }
+    .horizontal fieldset > button {
+        margin-top: 0;
+    }
+}
