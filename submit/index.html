@@ -26,22 +26,22 @@
         <h1 class="cutout">Submit a Talk</h1>
         
         <div class="content speaker_submission">
-            <form accept-charset="UTF-8" action="" id="speaker_submission" method="post">
+            <form accept-charset="UTF-8" action="#speaker_submission" id="speaker_submission" method="post">
                 <fieldset>
                     <label for="speaker_submission_name">Name*</label>
-                    <input id="speaker_submission_name" name="speaker_submission[name]" type="text">
+                    <input id="speaker_submission_name" name="speaker_submission[name]" type="text" required>
                 </fieldset>
                 <fieldset>
                     <label for="speaker_submission_email">Email*</label>
-                    <input id="speaker_submission_email" name="speaker_submission[email]" type="email">
+                    <input id="speaker_submission_email" name="speaker_submission[email]" type="email" required>
                 </fieldset>
                 <fieldset>
                     <label for="speaker_submission_title">Title*</label>
-                    <input id="speaker_submission_title" name="speaker_submission[title]" type="text">
+                    <input id="speaker_submission_title" name="speaker_submission[title]" type="text" required>
                 </fieldset>
                 <fieldset>
                     <label for="speaker_submission_abstract">Abstract*</label>
-                    <textarea id="speaker_submission_abstract" name="speaker_submission[abstract]" rows="20"></textarea>
+                    <textarea id="speaker_submission_abstract" name="speaker_submission[abstract]" rows="20" required></textarea>
                 </fieldset>
                 <fieldset>
                     <label for="speaker_submission_speaker_bio">Speaker Bio</label>
@@ -66,6 +66,8 @@
         </div>
     </footer>
     
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script src="/scripts/scripts.js"></script>
 </body>
 </html>

@@ -40,14 +40,14 @@
         <section class="signup"><div class="content">
             <p>Sign up for notifications and other cool stuff that you don&rsquo;t want to miss.</p>
             
-            <form accept-charset="UTF-8" action="http://southdakotacodecamp.net/subscribers" class="horizontal" id="new_subscriber" method="post">
+            <form accept-charset="UTF-8" action="#new_subscriber" class="horizontal" id="new_subscriber" method="post">
                 <fieldset>
                     <label for="subscriber_name">Name</label>
-                    <input id="subscriber_name" name="subscriber[name]" type="text">
+                    <input id="subscriber_name" name="subscriber[name]" type="text" required>
                 </fieldset>
                 <fieldset>
                     <label for="subscriber_email">Email</label>
-                    <input id="subscriber_email" name="subscriber[email]" type="email">
+                    <input id="subscriber_email" name="subscriber[email]" type="email" required>
                 </fieldset>
                 <fieldset>
                     <button name="button" type="submit">Submit</button>
@@ -68,6 +68,8 @@
         </div>
     </footer>
     
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script src="/scripts/scripts.js"></script>
 </body>
 </html>

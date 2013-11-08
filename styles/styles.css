@@ -101,6 +101,9 @@ label {
     font-size: .875em;
     text-align: left;
 }
+label.error {
+    color: #f00;
+}
 fieldset {
     margin-bottom: 1em;
 }
@@ -120,6 +123,9 @@ input[type="text"], input[type="date"], input[type="time"], input[type="datetime
     font-size: .875em;
     padding: 1em;
     width: 100%;
+}
+input[type="text"].error, input[type="date"].error, input[type="time"].error, input[type="datetime"].error, input[type="datetime-local"].error, input[type="url"].error, input[type="email"].error, input[type="number"].error, input[type="search"].error, input[type="file"].error, select.error, textarea.error, .textbox.error {
+    border: 1px solid #f00;
 }
 button, .button, input[type="button"], input[type="submit"], input[type="reset"] {
     background-color: #7c93ca;
@@ -368,4 +374,48 @@ footer .follow a:first-child {
         margin-right: 0;
         width: 100%;
     }
+}
+
+
+
+
+/******************************************************************************
+    Animation from Animate.css: https://daneden.me/animate/
+******************************************************************************/
+.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:2s;-moz-animation-duration:2s;-ms-animation-duration:2s;-o-animation-duration:2s;animation-duration:2s;}.animated.hinge{-webkit-animation-duration:2s;-moz-animation-duration:2s;-ms-animation-duration:2s;-o-animation-duration:2s;animation-duration:2s;}@-webkit-keyframes tada {
+	0% {-webkit-transform: scale(1);}	10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {-webkit-transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
+	100% {-webkit-transform: scale(1) rotate(0);}
+}
+
+@-moz-keyframes tada {
+	0% {-moz-transform: scale(1);}	
+	10%, 20% {-moz-transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {-moz-transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {-moz-transform: scale(1.1) rotate(-3deg);}
+	100% {-moz-transform: scale(1) rotate(0);}
+}
+
+@-o-keyframes tada {
+	0% {-o-transform: scale(1);}	
+	10%, 20% {-o-transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {-o-transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {-o-transform: scale(1.1) rotate(-3deg);}
+	100% {-o-transform: scale(1) rotate(0);}
+}
+
+@keyframes tada {
+	0% {transform: scale(1);}	
+	10%, 20% {transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);}
+	100% {transform: scale(1) rotate(0);}
+}
+
+.tada {
+	-webkit-animation-name: tada;
+	-moz-animation-name: tada;
+	-o-animation-name: tada;
+	animation-name: tada;
 }
