@@ -9,12 +9,12 @@
     position: relative;
 }
 
-.cutout {
+.cutout( @start: @gradientStart, @middle: @gradientMiddle, @end: @gradientEnd ) {
     text-shadow: 0;
     font-weight: 300;
     text-transform: uppercase;
     text-align: center;
-    background: -webkit-linear-gradient(left, @gradientStart 30%, @gradientMiddle 57%, @gradientEnd 79%);
+    background: -webkit-linear-gradient(left, @start 30%, @middle 57%, @end 79%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: none;
