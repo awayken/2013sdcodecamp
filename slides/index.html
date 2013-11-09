@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Focused Frontends</title>
+
+		<meta name="description" content="As websites and web applications grow in complexity and size, the old days of monolithic, site-wide stylesheets and scripts are over. I'll share with you some techniques for making your website more focused by modularizing your frontend code. The technologies I'll be using are LESS and RequireJS, but the principles should apply to any CSS preprocessor or JavaScript module library.">
+		<meta name="author" content="Miles Rausch">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+<div class="slides">
+    <section>
+        <h1>Focused Frontends</h1>
+<div>by Miles Rausch</div>
+<div>
+        <a href="http://milesrausch.com">http://milesrausch.com</a>
+    </div>
+</section>
+<section>
+    <h2>ERMAHGERD HERPERRINKS</h2>
+<div>
+<div style="font-size: 35.591556549072266px; font-style: normal; font-variant: normal;">Slides</div>
+<div style="font-size: 35.591556549072266px; font-style: normal; font-variant: normal;">
+    <a href="https://slid.es/awayken/2013sdcodecamp/">https://slid.es/awayken/2013sdcodecamp</a>
+</div>
+<div style="font-size: 35.591556549072266px; font-style: normal; font-variant: normal;">
+<br>
+</div>
+<div style="font-size: 35.591556549072266px; font-style: normal; font-variant: normal;">Demo</div>
+<div style="font-size: 35.591556549072266px; font-style: normal; font-variant: normal;">
+<a href="https://github.com/awayken/2013sdcodecamp">https://github.com/awayken/2013sdcodecamp</a>
+</div>
+<div style="font-size: 35.591556549072266px; font-style: normal; font-variant: normal;">
+<br>
+</div>
+<div style="font-size: 35.591556549072266px; font-style: normal; font-variant: normal;">South Dakota Code Camp Feedback</div>
+<div style="font-size: 35.591556549072266px; font-style: normal; font-variant: normal;">
+<a href="http://tinyurl.com/rsdcc13">http://tinyurl.com/rsdcc13</a>
+</div>
+</div>
+<div style="font-size: 35.591556549072266px; font-style: normal; font-variant: normal;">
+<br>
+</div>
+<div>
+<span>
+<a href="http://knowyourmeme.com/memes/ermahgerd">
+    <font style="font-size: 18px;">http://knowyourmeme.com/memes/ermahgerd</font>
+</a>
+</span>
+<br>
+</div>
+</section>
+<section>
+    <section>
+        <h2>Who Am I?</h2>
+<div>
+    <iframe width="640" height="480" src="//www.youtube.com/embed/Ranu8BOvQmQ" frameborder="0" allowfullscreen="">
+    </iframe>
+</div>
+</section>
+    <section>
+        <h2>Miles Rausch</h2>
+<div>
+        <ul>
+<li>Web Developer at Security Labs, LLC</li>
+<li>Server side - CFML</li>
+<li>Client side - HTML 5, CSS 3, LESS, RequireJS, &amp;c.</li>
+<li>Some mobile web (which sucks oysters)</li>
+<li>
+        <a href="https://twitter.com/awayken">@awayken</a>
+    </li>
+<li>
+    <a href="http://milesrausch.com">Of Miles Rausch</a>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section>
+    <section>
+        <h2>The Old Way</h2>
+<div>
+<pre><code><br></code><code> /index.html<br></code><code> /sessions/index.html</code><code> /submit/index.html</code><code><br></code><code> /styles/normalize.css</code><code> /styles/styles.css</code><code><br></code><code> /scripts/jquery.min.js</code><code> /scripts/jquery.someplugin.min.js</code><code> /scripts/scripts.js</code><code><br></code>    </pre>
+</div>
+<br>
+</section>
+<section>
+    <h2>Problems</h2>
+<div>
+    <ul>
+<li>File size</li>
+<li>Organization</li>
+<li>Uniqueness</li>
+<li>Bloat</li>
+</ul>
+</div>
+</section>
+</section>
+<section>
+    <section>
+        <h2>The New Way</h2>
+<div>CSS Preprocessors, JavaScript Module Loaders</div>
+<div>
+<pre><code><br></code><code> /index.html</code><code> /sessions/index.html</code><code> /submit/index.html</code><code><br></code><code> /_assets/less/variables.less</code><code> /_assets/less/homepage.less</code><code> /_assets/less/sessions.less</code><code> /_assets/less/submit.less</code><code><br></code><code> /scripts/require.js</code><code> /scripts/homepage.js</code><code> /scripts/submit.js</code><code><br></code>    </pre>
+</div>
+</section>
+<section>
+    <h2>Benefits</h2>
+<div>The biggest benefit is modularity.</div>
+<div>
+    <ul>
+<li>Smaller files</li>
+<li>Better organization</li>
+<li>Uniqueness</li>
+<li>Bloat</li>
+</ul>
+</div>
+</section>
+</section>
+<section>
+    <h2>Demo</h2>
+<div>
+<a href="https://github.com/awayken/2013sdcodecamp">https://github.com/awayken/2013sdcodecamp</a>
+    <br>
+</div>
+</section>
+<section>
+    <section>
+        <h2>Resources</h2>
+<div>
+<span>CSS Preprocessors</span>
+        <br>
+</div>
+<div>
+        <br>
+    </div>
+<div>
+    <a href="http://blog.teamtreehouse.com/how-to-choose-the-right-css-preprocessor">How to Choose the Right CSS Preprocessor</a>
+</div>
+<div>
+<br>
+</div>
+<div>LESS CSS:&nbsp;<a href="http://lesscss.org/">http://lesscss.org/</a>
+</div>
+<div>Sass:&nbsp;<a href="http://sass-lang.com/">http://sass-lang.com/</a>
+</div>
+<div>Stylus:&nbsp;<a href="http://learnboost.github.io/stylus/">http://learnboost.github.io/stylus/</a>
+</div>
+</section>
+<section>
+    <h2>Resources</h2>
+<div>JavaScript Module Loaders</div>
+<div>
+    <br>
+</div>
+<div>
+<a href="http://stackoverflow.com/questions/12779565/comparing-popular-script-loaders-yepnope-requirejs-labjs-and-headjs">Comparing popular script loaders</a>
+</div>
+<div>
+<br>
+</div>
+<div>RequireJS:&nbsp;<a href="http://requirejs.org/">http://requirejs.org/</a>
+</div>
+<div>YepNopeJS:&nbsp;<a href="http://yepnopejs.com/">http://yepnopejs.com/</a>
+</div>
+<div>LABjs:&nbsp;<a href="http://labjs.com/">http://labjs.com/</a>
+</div>
+<div>Head.JS:&nbsp;<a href="http://headjs.com/">http://headjs.com/</a>
+</div>
+</section>
+</section>
+<section>
+    <h2>The End</h2>
+<div>Slides</div>
+<div>
+    <a href="https://slid.es/awayken/2013sdcodecamp/">https://slid.es/awayken/2013sdcodecamp</a>
+</div>
+<div>
+<br>
+</div>
+<div>Demo</div>
+<div>
+<a href="https://github.com/awayken/2013sdcodecamp">https://github.com/awayken/2013sdcodecamp</a>
+</div>
+<div>
+<br>
+</div>
+<div>South Dakota Code Camp Feedback</div>
+<div>
+<a href="http://tinyurl.com/rsdcc13">http://tinyurl.com/rsdcc13</a>
+</div>
+</section>
+</div>
+
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
