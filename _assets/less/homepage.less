@@ -7,96 +7,99 @@
 /******************************************************************************
     Homepage
 ******************************************************************************/
-.homepage {
+body {
     background: url('images/homepage.jpg') no-repeat fixed center top;
     background-size: cover;
-}
-@media only screen and ( max-width: 650px ) {
-    .homepage {
+    
+    @media only screen and ( max-width: 650px ) {
         background-position: center -6em;
     }
-}
-
-.homepage #main {
-    margin-top: 0;
-}
-
-.homepage #main .hero {
-    background: transparent;
-    color: white;
-    font-size: 4em;
-    font-style: italic;
-    font-weight: bold;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 1em 0;
-    text-align: center;
-    text-shadow: 2px 2px 0.5em black;
-}
-@media only screen and ( max-width: 850px ) {
-    .homepage #main .hero {
-        font-size: 3em;
+    
+    #main {
+        margin-top: 0;
+        
+        .hero {
+            background: transparent;
+            color: white;
+            font-size: 4em;
+            font-style: italic;
+            font-weight: bold;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 1em 0;
+            text-align: center;
+            text-shadow: 2px 2px 0.5em black;
+            
+            @media only screen and ( max-width: 850px ) {
+                font-size: 3em;
+            }
+            @media only screen and ( max-width: @bigMobileSize ) {
+                font-size: 2em;
+            }
+            @media only screen and ( max-width: @smallMobileSize ) {
+                font-size: 1em;
+            }
+            
+            span {
+                display: block;
+            }
+            span + span {
+                font-size: 1.25em;
+            }
+            span + span + span {
+                font-size: 1.5em;
+            }
+        }
     }
-}
-@media only screen and ( max-width: 650px ) {
-    .homepage #main .hero {
-        font-size: 2em;
+    
+    .about {
+        h2 {
+            .cutout;
+            font-size: 4em;
+            padding: .25em 0 .125em 0;
+            
+            @media only screen and ( max-width: @bigMobileSize ) {
+                font-size: 2em;
+            }
+        }
+        
+        p {
+            font-size: 1.25em;
+        }
+        
+        .date-location {
+            .cutout;
+            display: block;
+            letter-spacing: .2em;
+            margin-bottom: 2em;
+        }
     }
-}
-@media only screen and ( max-width: 450px ) {
-    .homepage #main .hero {
-        font-size: 1em;
-    }
-}
-.homepage #main .hero span {
-    display: block;
-}
-.homepage #main .hero span + span {
-    font-size: 1.25em;
-}
-.homepage #main .hero span + span + span {
-    font-size: 1.5em;
-}
-
-.homepage .about h2 {
-    font-size: 4em;
-    padding: .25em 0 .125em 0;
-}
-.homepage .about .date-location {
-    display: block;
-    letter-spacing: .2em;
-    margin-bottom: 2em;
-}
-.homepage .about p {
-    font-size: 1.25em;
-}
-@media only screen and ( max-width: 650px ) {
-    .homepage .about h2 {
-        font-size: 2em;
-    }
-}
-
-.homepage .signup form {
-    padding: 0 1em 1em 1em;
-    text-align: center;
-}
-.homepage .signup form fieldset {
-    width: 40%;
-}
-.homepage .signup form fieldset > button {
-    font-size: 1.1em;
-    padding: .5em;
-    width: 100%;
-}
-.homepage .signup form fieldset:last-child {
-    width: 15%;
-}
-@media only screen and ( max-width: 550px ) {
-    .homepage .signup form fieldset {
-        width: 100%;
-    }
-    .homepage .signup form fieldset:last-child {
-        margin: 0 auto;
-        width: 50%;
+    
+    .signup form {
+        padding: 0 1em 1em 1em;
+        text-align: center;
+        
+        fieldset {
+            width: 40%;
+            
+            @media only screen and ( max-width: @bigMobileSize ) {
+                width: 100%;
+            }
+            
+            &:last-child {
+                width: 15%;
+                
+                @media only screen and ( max-width: @bigMobileSize ) {
+                    margin: 0 auto;
+                    width: 50%;
+                }
+            }
+            
+            > button {
+                font-size: 1.1em;
+                padding: .5em;
+                width: 100%;
+            }
+        }
     }
 }

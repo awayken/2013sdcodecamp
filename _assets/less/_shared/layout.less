@@ -1,88 +1,93 @@
 /******************************************************************************
     Layout
 ******************************************************************************/
-.content {
-    margin: 0 auto;
-    max-width: 920px;
-    padding: 0 1em;
-    position: relative;
-}
-
 header {
+    .clearfix;
     background: white;
     position: relative;
-}
-header h1, header h2 {
-    position: absolute;
-    font-size: 1.0em;
-    left: 0;
-    top: 0.5em;
-}
-header nav {
-    float: right;
-    line-height: 2;
-    margin: 0.5em 0;
-}
-header nav a {
-    margin-left: 1em;
-}
-header nav a:first-child {
-    margin-left: 0;
-}
-header nav a.active {
-    border-bottom: 2px solid #00e4b1;
-}
-@media only screen and ( max-width: 650px ) {
-    header {
+    
+    @media only screen and ( max-width: @bigMobileSize ) {
         text-align: center;
     }
-    header h1, header h2 {
-        position: static;
+    
+    h1, h2 {
+        position: absolute;
+        font-size: 1.0em;
+        left: 0;
+        top: 0.5em;
+        
+        @media only screen and ( max-width: @bigMobileSize ) {
+            position: static;
+        }
     }
-    header nav {
-        float: none;
+    
+    nav {
+        float: right;
+        line-height: 2;
+        margin: 0.5em 0;
+        
+        @media only screen and ( max-width: @bigMobileSize ) {
+            float: none;
+        }
+        
+        a {
+            margin-left: 1em;
+            
+            &:first-child {
+                margin-left: 0;
+            }
+            &.active {
+                border-bottom: 2px solid @gradientStart;
+            }
+        }
     }
 }
 
 #main {
     margin-top: 4em;
-}
-#main section {
-    background: white;
-    padding: 1em 0;
-}
-@media only screen and ( max-width: 650px ) {
-    #main {
+    
+    @media only screen and ( max-width: @bigMobileSize ) {
         margin-top: 0;
+    }
+    
+    section {
+        background: white;
+        padding: 1em 0;
     }
 }
 
 footer {
+    .clearfix;
     background: white;
-}
-footer .branding {
-    float: left;
-    margin: 0.5em 0;
-}
-footer .follow {
-    float: right;
-    line-height: 2;
-    margin: 0.5em 0;
-}
-footer .follow a {
-    margin-left: 1em;
-}
-footer .follow a:first-child {
-    margin-left: 0;
-}
-@media only screen and ( max-width: 450px ) {
-    footer {
+    
+    @media only screen and ( max-width: @smallMobileSize ) {
         text-align: center;
     }
-    footer .branding {
-        display: none;
+    
+    .branding {
+        float: left;
+        margin: 0.5em 0;
+        
+        @media only screen and ( max-width: @smallMobileSize ) {
+            display: none;
+        }
     }
-    footer .follow {
-        float: none;
+    
+    .follow {
+        float: right;
+        line-height: 2;
+        margin: 0.5em 0;
+        
+        @media only screen and ( max-width: @smallMobileSize ) {
+            float: none;
+        }
+        
+        a {
+            margin-left: 1em;
+            
+            &:first-child {
+                margin-left: 0;
+            }
+        }
     }
 }

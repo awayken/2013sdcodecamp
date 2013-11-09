@@ -2,6 +2,10 @@
     General Styles
 ******************************************************************************/
 
+// Added variables and mixins
+@import 'variables.less';
+@import 'mixins.less';
+
 @import 'http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300';
 @import 'animations.less';
 
@@ -19,30 +23,31 @@
 body {
     background: #fff url('images/body.jpg') no-repeat center top;
     background-size: auto 74px;
-    color: #555555;
+    color: @textcolor;
     font-family: "Roboto Condensed", sans-serif;
     font-size: 1em;
     line-height: 1.2;
-}
-@media only screen and ( max-width: 650px ) {
-    body {
+    
+    @media only screen and ( max-width: @bigMobileSize ) {
         background: #fff;
     }
 }
 
-a:link, a:visited {
-    color: #5875bb;
-    text-decoration: none;
-}
-a:hover, a:active {
-    text-decoration: underline;
+a {
+    &:link, &:visited {
+        color: @linkcolor;
+        text-decoration: none;
+    }
+    &:hover, &:active {
+        text-decoration: underline;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
     font-weight: bold;
-    color: #555555;
+    color: @textcolor;
     line-height: 1.35;
     text-rendering: optimizeLegibility;
     text-shadow: #888888 1px 1px;
@@ -53,43 +58,24 @@ p, ol, ul, dl, address {
     padding-bottom: 1em;
 }
 
-.clearfix:before, .clearfix:after {
-    content: " ";
-    display: table;
-}
-.clearfix:after {
-    clear: both;
-}
-.clearfix {
-    *zoom: 1;
-}
-
-.logo, .logo:link, .logo:visited {
-    color: #555555;
-    display: inline-block;
-    line-height: 2;
-    font-size: .875em;
-    font-weight: normal;
-    text-transform: uppercase;
-    text-shadow: none;
-}
-.logo:hover, .logo:active {
-    text-decoration: none;
-}
-.logo i {
-    color: #68dcc0;
-    font-size: 2em;
-    vertical-align: sub;
-}
-
-.cutout {
-    text-shadow: 0;
-    font-weight: 300;
-    text-transform: uppercase;
-    text-align: center;
-    background: -webkit-linear-gradient(left, #68dcc0 30%, #8c93de 57%, #f9a57f 79%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: none;
-    line-height: 1em;
+.logo {
+    &:link, &:visited {
+        color: @textcolor;
+        display: inline-block;
+        line-height: 2;
+        font-size: .875em;
+        font-weight: normal;
+        text-transform: uppercase;
+        text-shadow: none;
+    }
+    
+    &:hover, &:active {
+        text-decoration: none;
+    }
+    
+    i {
+        color: @gradientStart;
+        font-size: 2em;
+        vertical-align: sub;
+    }
 }

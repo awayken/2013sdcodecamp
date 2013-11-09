@@ -5,36 +5,21 @@
 @import '_shared/layout.less';
 
 /******************************************************************************
-    Non-Homepage
+    Submit A Talk
 ******************************************************************************/
-#main h1 {
-    font-size: 4em;
-    margin-bottom: 1em;
-    padding: .25em 0 .125em 0;
-}
-#main h3 {
-    color: #68dcc0;
-    font-weight: normal;
-}
-@media only screen and ( max-width: 650px ) {
-    #main h1 {
-        font-size: 2em;
+#main {
+    h1 {
+        .cutout;
+        font-size: 4em;
+        margin-bottom: 1em;
+        padding: .25em 0 .125em 0;
+        
+        @media only screen and ( max-width: @bigMobileSize ) {
+            font-size: 2em;
+        }
     }
 }
 
-.sessions article {
-    display: inline-block;
-    margin-right: 4%;
-    vertical-align: top;
-    width: 45%;
-}
-.sessions article h3 {
-    text-shadow: none;
-}
-@media only screen and ( max-width: 650px ) {
-    .sessions article {
-        display: block;
-        margin-right: 0;
-        width: 100%;
-    }
+.speaker_submission {
+    .content;
 }

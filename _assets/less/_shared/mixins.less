@@ -1,0 +1,33 @@
+/******************************************************************************
+    Mixins
+******************************************************************************/
+
+.content {
+    margin: 0 auto;
+    max-width: 920px;
+    padding: 0 1em;
+    position: relative;
+}
+
+.cutout {
+    text-shadow: 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    background: -webkit-linear-gradient(left, @gradientStart 30%, @gradientMiddle 57%, @gradientEnd 79%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    line-height: 1em;
+}
+
+.clearfix {
+    *zoom: 1;
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
